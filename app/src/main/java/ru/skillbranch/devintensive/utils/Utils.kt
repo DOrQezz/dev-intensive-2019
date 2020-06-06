@@ -15,7 +15,7 @@ object Utils {
         val firstName = parts?.notEmptyOrNullAt(0)
         val lastName = parts?.notEmptyOrNullAt(1)
 
-        return firstName to firstName
+        return firstName to lastName
     }
 
     private fun List<String>.notEmptyOrNullAt(index: Int) = getOrNull(index).let {

@@ -10,9 +10,9 @@ class Task4 {
     @Test
     fun `Задание 4, проверка метода format без параметра`() {
         val sdf = SimpleDateFormat("dd-MM-yyyy HH:mm:ss XXX")
-        val date1 = sdf.parse("01-07-2019 14:00:00 +00:00")
-        val date2 = sdf.parse("02-07-2019 15:11:00 +00:00")
-        val date3 = sdf.parse("12-01-2020 16:11:22 +00:00")
+        val date1 = sdf.parse("01-07-2019 14:00:00 +03:00")
+        val date2 = sdf.parse("02-07-2019 15:11:00 +03:00")
+        val date3 = sdf.parse("12-01-2020 16:11:22 +03:00")
         val expected1 = "14:00:00 01.07.19"
         val expected2 = "15:11:00 02.07.19"
         val expected3 = "16:11:22 12.01.20"
@@ -29,9 +29,9 @@ class Task4 {
     @Test
     fun `Задание 4, проверка метода format с параметром`() {
         val sdf = SimpleDateFormat("dd-MM-yyyy HH:mm:ss XXX")
-        val date1 = sdf.parse("01-07-2019 14:00:00 +00:00")
-        val date2 = sdf.parse("02-07-2019 15:11:00 +00:00")
-        val date3 = sdf.parse("12-01-2020 16:11:22 +00:00")
+        val date1 = sdf.parse("01-07-2019 14:00:00 +03:00")
+        val date2 = sdf.parse("02-07-2019 15:11:00 +03:00")
+        val date3 = sdf.parse("12-01-2020 16:11:22 +03:00")
         val expected1 = "14:00:00"
         val expected2 = "15:11:00"
         val expected3 = "16:11:22"

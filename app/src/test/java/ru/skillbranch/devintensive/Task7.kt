@@ -11,7 +11,7 @@ class Task7 {
         compareEquals(Utils.transliteration("аАбБвВгГдДеЕёЁ"), "aAbBvVgGdDeEeE")
         compareEquals(Utils.transliteration("жЖзЗиИйЙкКлЛ"), "zhZhzZiIiIkKlL")
         compareEquals(Utils.transliteration("мМнНоОпПрРсСтТуУ"), "mMnNoOpPrRsStTuU")
-        compareEquals(Utils.transliteration("фФхХцЦшШщЩ"), "fFhHcCshShsh'Sh'")
+        compareEquals(Utils.transliteration("фФхХцЦшШщЩ"), "fFhHcCshShshSh")
         compareEquals(Utils.transliteration("ъЪьЬэЭюЮяЯ"), "eEyuYuyaYa")
         compareEquals(Utils.transliteration("aAbBcCdDeEfFgG"), "aAbBcCdDeEfFgG")
         compareEquals(Utils.transliteration("hHiIjJkKlLmMnN"), "hHiIjJkKlLmMnN")
