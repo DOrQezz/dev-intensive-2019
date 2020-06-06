@@ -8,6 +8,6 @@ fun String.truncate(size: Int = 16): String {
 }
 
 fun String.stripHtml() = this
-    .replace(Regex("<[^>]*>"), "")
-    .replace(Regex("&amp;|&lt;|&gt;|&quot;|&apos;|&#\\d+;"), "")
-    .replace(Regex(" +"), " ")
+        .replace(Regex("<[^>]*>"), "")
+        .replace(Regex("&amp;|&lt;|&gt;|&quot;|&apos;|&#\\d+;"), "")
+        .replace(Regex(" +"), " ")
