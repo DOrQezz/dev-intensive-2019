@@ -21,10 +21,10 @@ fun Activity.isKeyboardOpen(): Boolean {
     return false
 }
 
-fun Activity.isKeyboardClose() = !isKeyboardOpen()
+fun Activity.isKeyboardClosed() = !isKeyboardOpen()
 
 fun Activity.hideKeyboard() {
-    if (isKeyboardClose()) return
+    if (isKeyboardClosed()) return
     val view = currentFocus?: return
     val inputMethodManager = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
     inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
