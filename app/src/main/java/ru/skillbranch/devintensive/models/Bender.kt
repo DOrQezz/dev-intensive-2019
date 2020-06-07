@@ -16,10 +16,10 @@ class Bender(var status: Status = Status.NORMAL, var question: Question = NAME) 
         }
         status = status.nextStatus()
         val result = if (status.ordinal != 0) {
-            "Это неправильный ответ\n" + question.question
+            "Это неправильный ответ\n${question.question}"
         } else {
             question = NAME
-            "Это неправильный ответ. Давай все по новой\n" + question.question
+            "Это неправильный ответ. Давай все по новой\n${question.question}"
         }
         return result to status.color
     }

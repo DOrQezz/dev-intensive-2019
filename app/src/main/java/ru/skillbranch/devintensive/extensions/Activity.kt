@@ -6,7 +6,7 @@ import android.graphics.Rect
 import android.view.inputmethod.InputMethodManager
 
 fun Activity.isKeyboardOpen(): Boolean {
-    var r = Rect()
+    val r = Rect()
     val rootView = window.decorView
     rootView.getWindowVisibleDisplayFrame(r)
     val screenHeight = rootView.height
@@ -25,7 +25,7 @@ fun Activity.isKeyboardClosed() = !isKeyboardOpen()
 
 fun Activity.hideKeyboard() {
     if (isKeyboardClosed()) return
-    val view = currentFocus?: return
+    val view = currentFocus ?: return
     val inputMethodManager = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
     inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
 }
