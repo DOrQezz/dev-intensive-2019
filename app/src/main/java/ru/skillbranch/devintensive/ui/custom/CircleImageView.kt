@@ -2,6 +2,8 @@ package ru.skillbranch.devintensive.ui.custom
 
 import android.content.Context
 import android.graphics.*
+import android.graphics.Bitmap.Config
+import android.graphics.PorterDuff.Mode
 import android.graphics.drawable.BitmapDrawable
 import android.util.AttributeSet
 import android.view.View
@@ -17,17 +19,19 @@ import ru.skillbranch.devintensive.R
 import ru.skillbranch.devintensive.utils.Utils
 import kotlin.math.min
 
-class CircleImageView @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0):
+
+class CircleImageView @JvmOverloads constructor (context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0):
     ImageView(context, attrs, defStyleAttr) {
     companion object {
-        private const val DEFAULT_BORDER_COLOR: Int = android.graphics.Color.WHITE
+        private const val DEFAULT_BORDER_COLOR: Int = Color.WHITE
     }
+
     private var borderColor = DEFAULT_BORDER_COLOR
     private var borderWidth = Utils.convertDpToPx(context, 2F)
     private val borderPaint = Paint(Paint.ANTI_ALIAS_FLAG)
     private val circlePaint = Paint(Paint.ANTI_ALIAS_FLAG)
-    private val srcMode = PorterDuffXfermode(PorterDuff.Mode.SRC)
-    private val srcInMode = PorterDuffXfermode(PorterDuff.Mode.SRC_IN)
+    private val srcMode = PorterDuffXfermode(Mode.SRC)
+    private val srcInMode = PorterDuffXfermode(Mode.SRC_IN)
 
     init {
         if (attrs != null) {
@@ -89,10 +93,12 @@ class CircleImageView @JvmOverloads constructor(context: Context, attrs: Attribu
         if (drawable is BitmapDrawable)
             return (drawable as BitmapDrawable).bitmap
 
-        val bmp = drawable.toBitmap(width, height, Bitmap.Config.ARGB_8888)
+        val bmp =  drawable.toBitmap(width, height, Config.ARGB_8888)
         val canvas = Canvas(bmp)
         drawable.setBounds(0, 0, canvas.width, canvas.height)
         drawable.draw(canvas)
         return bmp
     }
 }
+
+
