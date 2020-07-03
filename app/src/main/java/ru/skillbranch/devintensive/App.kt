@@ -5,14 +5,7 @@ import android.content.Context
 import androidx.appcompat.app.AppCompatDelegate
 import ru.skillbranch.devintensive.repositories.PreferencesRepository
 
-class App: Application() {
-    companion object {
-        private var instance: App? = null
-
-        fun applicationContext(): Context {
-            return instance!!.applicationContext
-        }
-    }
+class App : Application() {
 
     init {
         instance = this
@@ -20,8 +13,14 @@ class App: Application() {
 
     override fun onCreate() {
         super.onCreate()
-        PreferencesRepository.getAppTheme().also {
-            AppCompatDelegate.setDefaultNightMode(it)
+        AppCompatDelegate.setDefaultNightMode(PreferencesRepository.theme)
+    }
+
+    companion object {
+        private lateinit var instance: App
+
+        fun applicationContext(): Context {
+            return instance.applicationContext
         }
     }
 }

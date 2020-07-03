@@ -2,7 +2,7 @@ package ru.skillbranch.devintensive
 
 import compare
 import org.junit.Test
-import ru.skillbranch.devintensive.models.User
+import ru.skillbranch.devintensive.models.data.User
 import java.text.SimpleDateFormat
 import java.util.*
 
